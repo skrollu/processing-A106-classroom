@@ -11,7 +11,7 @@ void setup() {
   table = creerTable();
   fenetre = creerFenetre();
   chaise = creerChaise();
-  ordinateur = creerOrdinateur();
+  ordinateur = creerOrdinateur(1);
 }
 
 void draw(){
@@ -53,9 +53,7 @@ void draw(){
       }
     }
   popMatrix();
-  
-  shape(ordinateur);
-  
+    
   //ecran ordinateur
   pushMatrix();
     translate(180, hauteurOrigineTables , distanceTableProfZ + (longueurPlateau/2) + (largeurEcran/2));

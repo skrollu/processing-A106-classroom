@@ -1,5 +1,5 @@
 // Distance de la camera au sujet.
-float rayon = 80;
+float rayon = 600;
 
 // Angle de la camera avec le sujet sur le plan XZ.
 float theta = 0; 
@@ -11,65 +11,78 @@ float camX = 100;
 float camY = 170;
 float camZ = rayon;
 
-boolean isPressed = false;
-float vitesseDeplacement = 3;
+float eyeX = 100;
+float eyeY = 170;
+float eyeZ = 300;
 
 float centreX = 980;
 float centreY = 170;
 float centreZ = 300;
 
+float vitesseDeplacement = 3;
+
 void bougerCamera() {
+  
   //camera(
   //  camX, camY, camZ,
-  //  centreX, centreY, centreZ,
+  //  0, 0, 0,
   //  0, 1, 0
   //); 
   
+  //if (isPressed == true) {
+  //  // On incrémente l'angle :
+  //  theta = (theta + radians(pmouseX - mouseX)  * 0.2) %TWO_PI;
+  //  phi = (phi + radians(pmouseY - mouseY)  * 0.2) %TWO_PI;
+    
+  //  // Calcul de la position cartésienne sur le
+  //  // plan XZ :
+  //  camX = rayon * cos(phi) * sin(theta);
+  //  camY = rayon * sin(phi);
+  //  camZ = rayon * cos(phi) * cos(theta);
+  //}
+  
   camera(
-    camX, camY, camZ,
-    0, 0, 0,
+    eyeX, eyeY, eyeZ,
+    centreX, centreY, centreZ,
     0, 1, 0
   ); 
   
-  if (isPressed == true) {
-    // On incrémente l'angle :
-    theta = (theta + radians(pmouseX - mouseX)  * 0.2) %TWO_PI;
-    phi = (phi + radians(pmouseY - mouseY)  * 0.2) %TWO_PI;
+  if(keyPressed){
+    if(key == 'z' || key == 'Z'){
+      eyeX += vitesseDeplacement;
+    }
+    if(key == 's' || key == 'S'){
+      eyeX -= vitesseDeplacement;
+    }
+    if(key == 'd' || key == 'D'){
+      eyeZ += vitesseDeplacement;
+      centreZ += vitesseDeplacement;
+    }
+    if(key == 'q' || key == 'Q'){
+      eyeZ -= vitesseDeplacement;
+      centreZ -= vitesseDeplacement;      
+    }
+    if(keyCode == ' '){
+      camY -= vitesseDeplacement; 
+    }
+    if(key == 'v' || key == 'V'){
+      camY += vitesseDeplacement;
+    }
     
-    // Calcul de la position cartésienne sur le
-    // plan XZ :
-    camX = rayon * cos(phi) * sin(theta);
-    camY = rayon * sin(phi);
-    camZ = rayon * cos(phi) * cos(theta);
-  }
-  
-  //if(keyPressed){
-  //  if(keyCode == UP){
-  //    camX += vitesseDeplacement;
-  //  }
-  //  if(keyCode == DOWN){
-  //    camX-= vitesseDeplacement;
-  //  }
-  //  if(keyCode == RIGHT){
-  //    camZ+= vitesseDeplacement;
-  //    centreZ+= vitesseDeplacement;
-  //  }
-  //  if(keyCode == LEFT){
-  //    camZ-= vitesseDeplacement;
-  //    centreZ -= vitesseDeplacement;      
-  //  }
-  //}
-  
-  if(isPressed){
-    //centreZ = theta = (theta + radians(pmouseX - mouseX)  * 0.2) %TWO_PI;
+    if(keyCode == LEFT){
+      centreZ -= vitesseDeplacement;  
+    }
+    if(keyCode == RIGHT){
+      centreZ += vitesseDeplacement;        
+    }
   }
 }
 
 
 void mousePressed(){
-  isPressed = true;
+  //centreZ = (pmouseX - mouseX);
 }
 
 void mouseReleased(){
-  isPressed = false;
+ 
 }
