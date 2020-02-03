@@ -26,9 +26,14 @@ float longueurDossierChaise = 46;
 float largeurDossierChaise = 1;
 float hauteurDossierChaise = 40;
 
+float largeurEcran = 32;
+float hauteurEcran = 20;
+
 //Placement par rapport à l'origine
 float espacementTables = 100;
 float hauteurOrigineTables = 205;
 
 float espacementChaisesTables = 20;
 float hauteurOrigineChaises = 227;
+
+float distanceTableProfZ = 230;

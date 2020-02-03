@@ -22,7 +22,7 @@ void draw(){
   
   //table professeur
   pushMatrix();
-    translate(190, hauteurOrigineTables, 230);
+    translate(190, hauteurOrigineTables, distanceTableProfZ);
     rotateY(3*(PI/2));
     shape(this.table);
   popMatrix();
@@ -54,9 +54,26 @@ void draw(){
     }
   popMatrix();
   
+  shape(ordinateur);
+  
+  //ecran ordinateur
   pushMatrix();
-    translate(175, hauteurOrigineTables - 30 - 10, (longueurPlateau/2)-15);
+    translate(180, hauteurOrigineTables , distanceTableProfZ + (longueurPlateau/2) + (largeurEcran/2));
+    rotateY(PI);
     shape(this.ordinateur);
+  popMatrix();
+  
+  pushMatrix();
+    translate(210, hauteurOrigineTables , (longueurPlateau/2));
+    shape(this.ordinateur);
+    for(int i = 0; i < 4; i++){    
+      for(int j = 0; j < 3; j++){
+        pushMatrix();
+          translate(i*(largeurPlateau + espacementTables), 0, j*longueurPlateau);
+          shape(this.ordinateur);
+        popMatrix();
+      }     
+    }
   popMatrix();
    
   //chaises élèves

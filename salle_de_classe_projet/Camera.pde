@@ -1,5 +1,5 @@
 // Distance de la camera au sujet.
-float rayon = 70;
+float rayon = 80;
 
 // Angle de la camera avec le sujet sur le plan XZ.
 float theta = 0; 
