@@ -19,7 +19,7 @@ float centreX = 980;
 float centreY = 170;
 float centreZ = 300;
 
-float vitesseDeplacement = 3;
+float vitesseDeplacement = 6;
 
 void bougerCamera() {
   
@@ -50,9 +50,11 @@ void bougerCamera() {
   if(keyPressed){
     if(key == 'z' || key == 'Z'){
       eyeX += vitesseDeplacement;
+      centreX += vitesseDeplacement;
     }
     if(key == 's' || key == 'S'){
       eyeX -= vitesseDeplacement;
+      centreX -= vitesseDeplacement;
     }
     if(key == 'd' || key == 'D'){
       eyeZ += vitesseDeplacement;
@@ -62,11 +64,13 @@ void bougerCamera() {
       eyeZ -= vitesseDeplacement;
       centreZ -= vitesseDeplacement;      
     }
-    if(keyCode == ' '){
-      camY -= vitesseDeplacement; 
+    if(key == ' '){
+      eyeY -= vitesseDeplacement; 
+      centreY -= vitesseDeplacement;
     }
     if(key == 'v' || key == 'V'){
-      camY += vitesseDeplacement;
+      eyeY += vitesseDeplacement;
+      centreY += vitesseDeplacement;
     }
     
     if(keyCode == LEFT){
