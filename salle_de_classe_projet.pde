@@ -2,6 +2,7 @@ PShape salle;
 PShape table;
 PShape fenetre;
 PShape chaise;
+PShape ordinateur;
 
 void setup() {
   size(1000, 600, P3D);
@@ -10,17 +11,13 @@ void setup() {
   table = creerTable();
   fenetre = creerFenetre();
   chaise = creerChaise();
+  ordinateur = creerOrdinateur();
 }
 
 void draw(){
   background(255);
   translate(width/2, height/2, 0);
-  
-  camera(camX, camY, camZ,
-    980, 170, 300,
-    0, 1, 0
-  ); 
-  
+  bougerCamera();
   shape(this.salle);
   
   //table professeur
@@ -56,6 +53,11 @@ void draw(){
       }
     }
   popMatrix();
+  
+  pushMatrix();
+    translate(175, hauteurOrigineTables - 30 - 10, (longueurPlateau/2)-15);
+    shape(this.ordinateur);
+  popMatrix();
    
   //chaises élèves
   pushMatrix();
@@ -90,6 +92,4 @@ void draw(){
       popMatrix();
     }
   popMatrix();
-  
-  bougerCamera();
 }
