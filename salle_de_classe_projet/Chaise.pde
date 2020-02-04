@@ -8,12 +8,12 @@ PShape creerChaise(){
   PShape piedArriere2;
   PShape dossier;
   
-  Forme formeAssise = new Forme(longueurAssiseChaise, largeurAssiseChaise, hauteurAssiseChaise);
-  Forme formePiedAvant1 = new Forme(longueurPiedChaise, largeurPiedChaise, hauteurPiedAvantChaise);
-  Forme formePiedAvant2 = new Forme(longueurPiedChaise, largeurPiedChaise, hauteurPiedAvantChaise);
-  Forme formePiedArriere1 = new Forme(longueurPiedChaise, largeurPiedChaise, hauteurPiedArriereChaise);
-  Forme formePiedArriere2 = new Forme(longueurPiedChaise, largeurPiedChaise, hauteurPiedArriereChaise);
-  Forme formeDossier = new Forme(longueurDossierChaise, largeurDossierChaise, hauteurDossierChaise);
+  Forme formeAssise = new Forme(longueurAssiseChaise, largeurAssiseChaise, hauteurAssiseChaise, 255, boisChaise);
+  Forme formePiedAvant1 = new Forme(longueurPiedChaise, largeurPiedChaise, hauteurPiedAvantChaise, color(235, 229, 52), null);
+  Forme formePiedAvant2 = new Forme(longueurPiedChaise, largeurPiedChaise, hauteurPiedAvantChaise, color(235, 229, 52), null);
+  Forme formePiedArriere1 = new Forme(longueurPiedChaise, largeurPiedChaise, hauteurPiedArriereChaise, color(235, 229, 52), null);
+  Forme formePiedArriere2 = new Forme(longueurPiedChaise, largeurPiedChaise, hauteurPiedArriereChaise, color(235, 229, 52), null);
+  Forme formeDossier = new Forme(longueurDossierChaise, largeurDossierChaise, hauteurDossierChaise, 255, boisChaise);
   
   assise = formeAssise.getForme();
   piedAvant1 = formePiedAvant1.getForme();
@@ -28,6 +28,8 @@ PShape creerChaise(){
   piedAvant2.translate(0,hauteurAssiseChaise,longueurAssiseChaise-longueurPiedChaise);
   piedArriere1.translate(largeurAssiseChaise-largeurPiedChaise,hauteurPiedAvantChaise - hauteurPiedArriereChaise + hauteurAssiseChaise, 0);
   piedArriere2.translate(largeurAssiseChaise-largeurPiedChaise,hauteurPiedAvantChaise - hauteurPiedArriereChaise + hauteurAssiseChaise, longueurAssiseChaise-longueurPiedChaise);
+  
+  
   dossier.rotateY(-PI/2);
   dossier.translate(largeurAssiseChaise-(largeurPiedChaise/2), hauteurPiedAvantChaise - hauteurPiedArriereChaise + 7, longueurPiedChaise);
   

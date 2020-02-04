@@ -1,3 +1,7 @@
+PShader shader;
+PImage boisChaise;
+PImage boisBleu;
+
 PShape salle;
 PShape table;
 PShape fenetre;
@@ -6,6 +10,9 @@ PShape ordinateur;
 
 void setup() {
   size(1000, 600, P3D);
+  shader = loadShader("LightShaderTexFrag.glsl","LightShaderTexVert.glsl");
+  boisChaise = loadImage("boisChaise.jpg");
+  boisBleu = loadImage("boisBleu.jpg");
   
   salle = creerSalle();
   table = creerTable();
