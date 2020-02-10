@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 PShader shader;
 PImage boisChaise;
 PImage boisBleu;
@@ -19,6 +21,8 @@ void setup() {
   fenetre = creerFenetre();
   chaise = creerChaise();
   ordinateur = creerOrdinateur(1);
+  
+  keyMap = new HashMap<Character, Boolean>();
 }
 
 void draw(){
