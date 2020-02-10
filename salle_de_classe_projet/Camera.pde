@@ -47,32 +47,32 @@ void bougerCamera() {
     0, 1, 0
   ); 
   
-  if(keyPressed){
-    if(key == 'z' || key == 'Z'){
+      if (keyMap.containsKey('z') && keyMap.get('z')){
       eyeX += vitesseDeplacement;
       centreX += vitesseDeplacement;
     }
-    if(key == 's' || key == 'S'){
+    if(keyMap.containsKey('s') && keyMap.get('s')){
       eyeX -= vitesseDeplacement;
       centreX -= vitesseDeplacement;
     }
-    if(key == 'd' || key == 'D'){
+    if(keyMap.containsKey('d') && keyMap.get('d')){
       eyeZ += vitesseDeplacement;
       centreZ += vitesseDeplacement;
     }
-    if(key == 'q' || key == 'Q'){
+    if(keyMap.containsKey('q') && keyMap.get('q')){
       eyeZ -= vitesseDeplacement;
       centreZ -= vitesseDeplacement;      
     }
-    if(key == ' '){
+    if(keyMap.containsKey(' ') && keyMap.get(' ')){
       eyeY -= vitesseDeplacement; 
       centreY -= vitesseDeplacement;
     }
-    if(key == 'v' || key == 'V'){
+    if(keyMap.containsKey('v') && keyMap.get('v')){
       eyeY += vitesseDeplacement;
       centreY += vitesseDeplacement;
     }
     
+   if(keyPressed){
     if(keyCode == LEFT){
       centreZ -= vitesseDeplacement;  
     }
@@ -82,6 +82,17 @@ void bougerCamera() {
   }
 }
 
+void keyPressed(KeyEvent event) {
+  char k = event.getKey();
+  println("keyPressed => " + k);
+  keyMap.put(Character.toLowerCase(k), true);
+}
+
+void keyReleased(KeyEvent event){
+  char k = event.getKey();
+  println("keyReleased => " + k);
+  keyMap.put(Character.toLowerCase(k), false);
+}
 
 void mousePressed(){
   //centreZ = (pmouseX - mouseX);
