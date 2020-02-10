@@ -1,3 +1,8 @@
+import java.util.Map;
+
+// Multiples keys pressed at the same time 
+HashMap<Character, Boolean> keyMap;
+
 // Distance de la camera au sujet.
 float rayon = 600;
 
@@ -20,6 +25,7 @@ float centreY = 170;
 float centreZ = 300;
 
 float vitesseDeplacement = 6;
+
 
 void bougerCamera() {
   
@@ -47,7 +53,8 @@ void bougerCamera() {
     0, 1, 0
   ); 
   
-      if (keyMap.containsKey('z') && keyMap.get('z')){
+    //Mouvement caméra axe X - Z (Touches: ZQSD)
+    if (keyMap.containsKey('z') && keyMap.get('z')){
       eyeX += vitesseDeplacement;
       centreX += vitesseDeplacement;
     }
@@ -63,6 +70,8 @@ void bougerCamera() {
       eyeZ -= vitesseDeplacement;
       centreZ -= vitesseDeplacement;      
     }
+    
+    //Deplacement camera vers le haut - bas (touches: 'espace' - V)
     if(keyMap.containsKey(' ') && keyMap.get(' ')){
       eyeY -= vitesseDeplacement; 
       centreY -= vitesseDeplacement;
@@ -72,23 +81,58 @@ void bougerCamera() {
       centreY += vitesseDeplacement;
     }
     
-   if(keyPressed){
-    if(keyCode == LEFT){
+    
+    //Direction Regard Camera (mouvement du centre) (touches directionnelles)
+    if(keyMap.containsKey('k') && keyMap.get('k')){
       centreZ -= vitesseDeplacement;  
     }
-    if(keyCode == RIGHT){
-      centreZ += vitesseDeplacement;        
+    if(keyMap.containsKey('m') && keyMap.get('m')){
+      centreZ += vitesseDeplacement;  
     }
-  }
+    if(keyMap.containsKey('o') && keyMap.get('o')){
+      centreY -= vitesseDeplacement;  
+    }
+   if(keyMap.containsKey('l') && keyMap.get('l')){
+      centreY += vitesseDeplacement;  
+    }
+   
 }
 
 void keyPressed(KeyEvent event) {
+  if(key == CODED){
+    if(keyCode == LEFT){
+      keyMap.put('k', true);
+    }
+    if(keyCode == RIGHT){
+      keyMap.put('m', true);      
+    }
+    if(keyCode == UP){
+      keyMap.put('o', true);
+    }
+    if(keyCode == DOWN){
+      keyMap.put('l', true);      
+    }
+  }
   char k = event.getKey();
   println("keyPressed => " + k);
   keyMap.put(Character.toLowerCase(k), true);
 }
 
 void keyReleased(KeyEvent event){
+  if(key == CODED){
+      if(keyCode == LEFT){
+        keyMap.put('k', false);
+      }
+      if(keyCode == RIGHT){
+        keyMap.put('m', false);      
+      }
+      if(keyCode == UP){
+        keyMap.put('o', false);
+      }
+      if(keyCode == DOWN){
+        keyMap.put('l', false);   
+      }
+  }
   char k = event.getKey();
   println("keyReleased => " + k);
   keyMap.put(Character.toLowerCase(k), false);
