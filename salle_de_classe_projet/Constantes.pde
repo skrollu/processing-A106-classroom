@@ -37,6 +37,9 @@ float longueurOrdinateur = 30;
 float largeurOrdinateur = 15;
 float hauteurOrdinateur = 35;
 
+float largeurEcranPlateau = 12;
+float longueurEcranPlateau = 10;
+
 //Placement par rapport à l'origine
 float espacementTables = 100;
 float hauteurOrigineTables = 205;

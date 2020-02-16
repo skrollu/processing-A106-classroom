@@ -9,11 +9,12 @@ PShape creerTable(){
   PShape pied3;
   PShape pied4;
   
-  Forme formePlateau = new Forme(longueurPlateau, largeurPlateau, hauteurPlateau);
-  Forme formePied1 = new Forme(5, 5, 72.5);
-  Forme formePied2 = new Forme(5, 5, 72.5);
-  Forme formePied3 = new Forme(5, 5, 72.5);
-  Forme formePied4 = new Forme(5, 5, 72.5);
+  textureMode(NORMAL);
+  Forme formePlateau = new Forme(longueurPlateau, largeurPlateau, hauteurPlateau, 255, boisBleu);
+  Forme formePied1 = new Forme(5, 5, 72.5, 0, null);
+  Forme formePied2 = new Forme(5, 5, 72.5, 0, null);
+  Forme formePied3 = new Forme(5, 5, 72.5, 0, null);
+  Forme formePied4 = new Forme(5, 5, 72.5, 0, null);
   
   plateau = formePlateau.getForme();
   pied1 = formePied1.getForme(); 

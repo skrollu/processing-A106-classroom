@@ -1,5 +1,10 @@
+import java.util.HashMap;
+
+// Multiples keys pressed at the same time 
+HashMap<Character, Boolean> keyMap;
+
 // Distance de la camera au sujet.
-float rayon = 600;
+float rayon = 980;
 
 // Angle de la camera avec le sujet sur le plan XZ.
 float theta = 0; 
@@ -21,6 +26,7 @@ float centreZ = 300;
 
 float vitesseDeplacement = 6;
 
+
 void bougerCamera() {
   
   //camera(
@@ -29,7 +35,7 @@ void bougerCamera() {
   //  0, 1, 0
   //); 
   
-  //if (isPressed == true) {
+  //if (mousePressed) {
   //  // On incrémente l'angle :
   //  theta = (theta + radians(pmouseX - mouseX)  * 0.2) %TWO_PI;
   //  phi = (phi + radians(pmouseY - mouseY)  * 0.2) %TWO_PI;
@@ -47,41 +53,91 @@ void bougerCamera() {
     0, 1, 0
   ); 
   
-  if(keyPressed){
-    if(key == 'z' || key == 'Z'){
+    //Mouvement caméra axe X - Z (Touches: ZQSD)
+    if (keyMap.containsKey('z') && keyMap.get('z')){
       eyeX += vitesseDeplacement;
       centreX += vitesseDeplacement;
     }
-    if(key == 's' || key == 'S'){
+    if(keyMap.containsKey('s') && keyMap.get('s')){
       eyeX -= vitesseDeplacement;
       centreX -= vitesseDeplacement;
     }
-    if(key == 'd' || key == 'D'){
+    if(keyMap.containsKey('d') && keyMap.get('d')){
       eyeZ += vitesseDeplacement;
       centreZ += vitesseDeplacement;
     }
-    if(key == 'q' || key == 'Q'){
+    if(keyMap.containsKey('q') && keyMap.get('q')){
       eyeZ -= vitesseDeplacement;
       centreZ -= vitesseDeplacement;      
     }
-    if(key == ' '){
+    
+    //Deplacement camera vers le haut - bas (touches: 'espace' - V)
+    if(keyMap.containsKey(' ') && keyMap.get(' ')){
       eyeY -= vitesseDeplacement; 
       centreY -= vitesseDeplacement;
     }
-    if(key == 'v' || key == 'V'){
+    if(keyMap.containsKey('v') && keyMap.get('v')){
       eyeY += vitesseDeplacement;
       centreY += vitesseDeplacement;
     }
     
-    if(keyCode == LEFT){
+    
+    //Direction Regard Camera (mouvement du centre) (touches directionnelles)
+    if(keyMap.containsKey('k') && keyMap.get('k')){
       centreZ -= vitesseDeplacement;  
     }
-    if(keyCode == RIGHT){
-      centreZ += vitesseDeplacement;        
+    if(keyMap.containsKey('m') && keyMap.get('m')){
+      centreZ += vitesseDeplacement;  
     }
-  }
+    if(keyMap.containsKey('o') && keyMap.get('o')){
+      centreY -= vitesseDeplacement;  
+    }
+   if(keyMap.containsKey('l') && keyMap.get('l')){
+      centreY += vitesseDeplacement;  
+    }
+   
 }
 
+void keyPressed(KeyEvent event) {
+  //peut etre amélioré
+  if(key == CODED){
+    if(keyCode == LEFT){
+      keyMap.put('k', true);
+    }
+    if(keyCode == RIGHT){
+      keyMap.put('m', true);      
+    }
+    if(keyCode == UP){
+      keyMap.put('o', true);
+    }
+    if(keyCode == DOWN){
+      keyMap.put('l', true);      
+    }
+  }
+  char k = event.getKey();
+  println("keyPressed => " + k);
+  keyMap.put(Character.toLowerCase(k), true);
+}
+
+void keyReleased(KeyEvent event){
+  if(key == CODED){
+      if(keyCode == LEFT){
+        keyMap.put('k', false);
+      }
+      if(keyCode == RIGHT){
+        keyMap.put('m', false);      
+      }
+      if(keyCode == UP){
+        keyMap.put('o', false);
+      }
+      if(keyCode == DOWN){
+        keyMap.put('l', false);   
+      }
+  }
+  char k = event.getKey();
+  println("keyReleased => " + k);
+  keyMap.put(Character.toLowerCase(k), false);
+}
 
 void mousePressed(){
   //centreZ = (pmouseX - mouseX);

@@ -12,17 +12,17 @@ PShape creerOrdinateur(int leftOrRight){ //l = 0 r = 1
   PShape ecranEcran;
   PShape clavier;
   
-  Forme formeOrdinateur = new Forme(longueurOrdinateur,largeurOrdinateur,hauteurOrdinateur);
-  Forme formeEcranPlateau = new Forme(10,12,1);
-  Forme formeEcranPied = new Forme(2,4,15);
-  //Forme formeEcranBord = new Forme(3,largeurEcran , hauteurEcran);
-  Forme formeEcranBordHaut = new Forme(3,largeurEcran , 1);
-  Forme formeEcranBordDroite = new Forme(3,1 , hauteurEcran-2);
-  Forme formeEcranBordBas = new Forme(3,largeurEcran , 1);
-  Forme formeEcranBordGauche = new Forme(3,1 , hauteurEcran-2);
-  Forme formeEcranBordDos = new Forme(1, largeurEcran-2 , hauteurEcran-2);
-  Forme formeEcranEcran = new Forme(1, largeurEcran-2 , hauteurEcran-2);
-  Forme formeClavier = new Forme(largeurClavier, longueurClavier, hauteurClavier);
+  Forme formeOrdinateur = new Forme(longueurOrdinateur,largeurOrdinateur,hauteurOrdinateur, 0, null);
+  Forme formeEcranPlateau = new Forme(longueurEcranPlateau, largeurEcranPlateau,1, 0, null);
+  Forme formeEcranPied = new Forme(2,4,15, 0, null);
+  //Forme formeEcranBord = new Forme(3,largeurEcran , hauteurEcran); // forme de départ pour l'écran
+  Forme formeEcranBordHaut = new Forme(3,largeurEcran , 1, 0, null);
+  Forme formeEcranBordDroite = new Forme(3,1 , hauteurEcran-2, 0, null);
+  Forme formeEcranBordBas = new Forme(3,largeurEcran , 1, 0, null);
+  Forme formeEcranBordGauche = new Forme(3,1 , hauteurEcran-2, 0, null);
+  Forme formeEcranBordDos = new Forme(1, largeurEcran-2 , hauteurEcran-2, 0, null);
+  Forme formeEcranEcran = new Forme(1, largeurEcran-2 , hauteurEcran-2, 75, null);
+  Forme formeClavier = new Forme(largeurClavier, longueurClavier, hauteurClavier, 0, null);
   
   ordinateur = formeOrdinateur.getForme();
   ecranPlateau = formeEcranPlateau.getForme();
@@ -65,12 +65,10 @@ PShape creerOrdinateur(int leftOrRight){ //l = 0 r = 1
   
   ordinateurGroup.addChild(ecran);
   
-  if(leftOrRight == 0){ //left
-    ordinateur.translate(-5,-hauteurOrdinateur,-largeurOrdinateur);
-  } else if (leftOrRight == 1){ //right
-    ordinateur.translate(-5,-hauteurOrdinateur,-35);
-  } else { // right by default
-    ordinateur.translate(-5,-hauteurOrdinateur,-35);
+  switch(leftOrRight){
+    case 0: ordinateur.translate(-5,-hauteurOrdinateur, hauteurOrdinateur); break; //left
+    case 1: ordinateur.translate(-5,-hauteurOrdinateur, -hauteurOrdinateur); break; //right
+    default: ordinateur.translate(-5,-hauteurOrdinateur,-hauteurOrdinateur); break; //right
   }
   
   clavier.translate(18, -hauteurClavier, -10);

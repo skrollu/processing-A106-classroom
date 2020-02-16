@@ -2,10 +2,13 @@ class Forme{
   
   float longueur, largeur, hauteur;
   PVector a,b,c,d,e,f,g,h;
+  PImage img;
   
   PShape forme;
 
-  public Forme (float longueur,float largeur, float hauteur, color couleur, PImage texture){
+  public Forme (float longueur,float largeur, float hauteur, color couleur, String strTexture){
+    
+    img = loadImage(strTexture);
     this.longueur = longueur;
     this.largeur = largeur;
     this.hauteur = hauteur;
@@ -21,7 +24,7 @@ class Forme{
     g = new PVector(longueur, hauteur, largeur);
     h = new PVector(longueur, 0, largeur);
     
-    forme = creerForme(couleur, texture);
+    this.forme = creerForme(couleur, img);
   }
  
   PShape getForme(){

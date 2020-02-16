@@ -11,19 +11,19 @@ PShape creerSalle(){
   PShape porteTableau;
   PShape tableau;
  
-  Forme formeSalle = new Forme(980, 595, 280);
-  Forme formeMurTableau = new Forme(5, 605, 280);
-  Forme formeMurCouloir = new Forme(980, 5, 280);
-  Forme formeMurFond = new Forme(5, 605, 280);
-  Forme formeMurFenetre = new Forme(980, 5, 280);
-  Forme formeMurSol = new Forme(990, 605, 5);
-  Forme formeMurPlafond = new Forme(990, 605, 5);
-  Forme formePorte = new Forme(100,7,200);
-  Forme formePorteFond = new Forme(7,100,200);
-  Forme formePorteTableau = new Forme(7,100,200);
-  Forme formeTableau = new Forme(7,400,140);
+  //Forme formeSalle = new Forme(980, 595, 280, 255); //modèle de départ de la salle
+  Forme formeMurTableau = new Forme(5, 605, 280, color(193, 232, 198), null);
+  Forme formeMurCouloir = new Forme(980, 5, 280, color(193, 232, 198), null);
+  Forme formeMurFond = new Forme(5, 605, 280, color(193, 232, 198), null);
+  Forme formeMurFenetre = new Forme(980, 5, 280, color(193, 232, 198), null);
+  Forme formeMurSol = new Forme(990, 605, 5, color(235, 52, 52), null);
+  Forme formeMurPlafond = new Forme(990, 605, 5, color(219, 204, 204), null);
+  Forme formePorte = new Forme(100,7,200, color(52, 235, 229), null);
+  Forme formePorteFond = new Forme(7,100,200, color(52, 235, 229), null);
+  Forme formePorteTableau = new Forme(7,100,200, color(52, 235, 229), null);
+  Forme formeTableau = new Forme(7,400,140, 255 , null);
   
-  piece = formeSalle.getForme();
+  //piece = formeSalle.getForme();
   murTableau = formeMurTableau.getForme();
   murCouloir = formeMurCouloir.getForme();
   murFond = formeMurFond.getForme();
@@ -48,7 +48,7 @@ PShape creerSalle(){
     porteTableau.translate(-6,80,480);
     tableau.translate(-6,80,60);
     
-    salle.addChild(piece);
+    //salle.addChild(piece);
     salle.addChild(murTableau);
     salle.addChild(murCouloir);
     salle.addChild(murFond);

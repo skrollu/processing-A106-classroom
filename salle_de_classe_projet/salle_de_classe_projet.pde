@@ -1,23 +1,39 @@
+PShader shader;
+PImage boisChaise;
+PImage boisBleu;
+PImage ewok;
+
 PShape salle;
 PShape table;
 PShape fenetre;
 PShape chaise;
-PShape ordinateur;
+PShape ordinateurDroite;
+PShape ordinateurGauche;
 
 void setup() {
-  size(1000, 600, P3D);
+  size(1250, 900, P3D);
+  shader = loadShader("LightShaderTexFrag.glsl","LightShaderTexVert.glsl");
+  
+  boisChaise = loadImage("boisChaise.jpg");
+  boisBleu = loadImage("boisBleu.jpg");
+    boisBleu = loadImage("ewok.png");
   
   salle = creerSalle();
   table = creerTable();
   fenetre = creerFenetre();
   chaise = creerChaise();
-  ordinateur = creerOrdinateur(1);
+  ordinateurGauche = creerOrdinateur(0);
+  ordinateurDroite = creerOrdinateur(1);
+  
+  keyMap = new HashMap<Character, Boolean>();
 }
 
 void draw(){
   background(255);
   translate(width/2, height/2, 0);
   bougerCamera();
+  
+  shader(shader);
   shape(this.salle);
   
   //table professeur
@@ -54,21 +70,37 @@ void draw(){
     }
   popMatrix();
     
-  //ecran ordinateur
+  //ordinateur professeur
   pushMatrix();
     translate(180, hauteurOrigineTables , distanceTableProfZ + (longueurPlateau/2) + (largeurEcran/2));
     rotateY(PI);
-    shape(this.ordinateur);
+    shape(this.ordinateurDroite);
   popMatrix();
   
+  shape(ordinateurDroite);
+  shape(ordinateurGauche);
+  
   pushMatrix();
-    translate(210, hauteurOrigineTables , (longueurPlateau/2));
-    shape(this.ordinateur);
+    translate(210, hauteurOrigineTables , (longueurPlateau/4));
+    shape(this.ordinateurDroite);
     for(int i = 0; i < 4; i++){    
       for(int j = 0; j < 3; j++){
         pushMatrix();
           translate(i*(largeurPlateau + espacementTables), 0, j*longueurPlateau);
-          shape(this.ordinateur);
+          shape(this.ordinateurDroite);
+        popMatrix();
+      }     
+    }
+  popMatrix();
+   
+  pushMatrix();
+    translate(210, hauteurOrigineTables , (longueurPlateau - (longueurPlateau/4) - largeurEcranPlateau));
+    shape(this.ordinateurGauche);
+    for(int i = 0; i < 4; i++){    
+      for(int j = 0; j < 3; j++){
+        pushMatrix();
+          translate(i*(largeurPlateau + espacementTables), 0, j*longueurPlateau);
+          shape(this.ordinateurGauche);
         popMatrix();
       }     
     }
