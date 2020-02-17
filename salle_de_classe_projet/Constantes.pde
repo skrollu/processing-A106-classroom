@@ -52,3 +52,13 @@ float espacementChaisesTables = 20;
 float hauteurOrigineChaises = 227;
 
 float distanceTableProfZ = 230;
+
+
+PVector[] lightPos = { 
+ new PVector((longueurLumiere + (longueurLumiere/2)), 0, ((2*longueurLumiere) + (largeurLumiere/2))),
+ new PVector((3*longueurLumiere) + (longueurLumiere/2), 0, ((2*longueurLumiere) + (largeurLumiere/2))),
+ new PVector((5*longueurLumiere) + (longueurLumiere/2), 0, ((2*longueurLumiere) + (largeurLumiere/2))),
+ new PVector((longueurLumiere + longueurLumiere/2), 0, ((3*longueurLumiere) + (largeurLumiere/2))),
+ new PVector(((3*longueurLumiere) + longueurLumiere/2), 0, ((3*longueurLumiere) + (largeurLumiere/2))),
+ new PVector(((5*longueurLumiere) + longueurLumiere/2), 0, ((3*longueurLumiere) + (largeurLumiere/2)))
+};

@@ -41,8 +41,6 @@ class Forme{
     cube.emissive(0, 0, 0);
     cube.normal(0, 0, 1);
 
-    texture(texture);
-
     //ABCD
     cube.vertex(a.x, a.y, a.z);    
     cube.vertex(b.x, b.y, b.z);   

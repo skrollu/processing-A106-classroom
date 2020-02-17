@@ -16,16 +16,12 @@ PShape creerSalle(){
   Forme formeMurCouloir = new Forme(980, 5, 280, color(193, 232, 198), null);
   Forme formeMurFond = new Forme(5, 605, 280, color(193, 232, 198), null);
   Forme formeMurFenetre = new Forme(980, 5, 280, color(193, 232, 198), null);
-  
-  colorMode(HSB, 100);
-  Forme formeMurSol = new Forme(990, 605, 5, color(0, 100, 71), null);
-  colorMode(RGB, 255);
-  
+  Forme formeMurSol = new Forme(990, 605, 5, color0, 100, 71), null);
   Forme formeMurPlafond = new Forme(990, 605, 5, color(219, 204, 204), null);
   Forme formePorte = new Forme(100,7,200, color(52, 235, 229), null);
   Forme formePorteFond = new Forme(7,100,200, color(52, 235, 229), null);
   Forme formePorteTableau = new Forme(7,100,200, color(52, 235, 229), null);
-  Forme formeTableau = new Forme(7,400,140, 20 , null);
+  Forme formeTableau = new Forme(7,400,140, 255 , null);
   
   //piece = formeSalle.getForme();
   murTableau = formeMurTableau.getForme();
