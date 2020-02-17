@@ -13,11 +13,7 @@ PShape creerOrdinateur(int leftOrRight){ //l = 0 r = 1
   PShape clavier;
   
   Forme formeOrdinateur = new Forme(longueurOrdinateur,largeurOrdinateur,hauteurOrdinateur, 0, null);
-<<<<<<< HEAD
   Forme formeEcranPlateau = new Forme(longueurEcranPlateau, largeurEcranPlateau,1, 0, null);
-=======
-  Forme formeEcranPlateau = new Forme(10,12,1, 0, null);
->>>>>>> 5b5813333b570ad6b7ea9ad7b98e040cfcd284af
   Forme formeEcranPied = new Forme(2,4,15, 0, null);
   //Forme formeEcranBord = new Forme(3,largeurEcran , hauteurEcran); // forme de départ pour l'écran
   Forme formeEcranBordHaut = new Forme(3,largeurEcran , 1, 0, null);

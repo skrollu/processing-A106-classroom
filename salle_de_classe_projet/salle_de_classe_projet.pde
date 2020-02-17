@@ -1,15 +1,8 @@
-<<<<<<< HEAD
-PShader shader;
-PImage boisChaise;
-PImage boisBleu;
-PImage ewok;
-=======
 import java.util.HashMap;
 
 PShader shader;
 PImage boisChaise;
 PImage boisBleu;
->>>>>>> 5b5813333b570ad6b7ea9ad7b98e040cfcd284af
 
 PShape salle;
 PShape table;
@@ -17,33 +10,24 @@ PShape fenetre;
 PShape chaise;
 PShape ordinateurDroite;
 PShape ordinateurGauche;
+PShape lumiere;
 
 void setup() {
-<<<<<<< HEAD
-  size(1250, 900, P3D);
-  shader = loadShader("LightShaderTexFrag.glsl","LightShaderTexVert.glsl");
-  
-  boisChaise = loadImage("boisChaise.jpg");
-  boisBleu = loadImage("boisBleu.jpg");
-    boisBleu = loadImage("ewok.png");
-=======
-  size(1000, 600, P3D);
+
+  size(1980, 1200, P3D);
   shader = loadShader("LightShaderTexFrag.glsl","LightShaderTexVert.glsl");
   boisChaise = loadImage("boisChaise.jpg");
   boisBleu = loadImage("boisBleu.jpg");
->>>>>>> 5b5813333b570ad6b7ea9ad7b98e040cfcd284af
-  
+ 
   salle = creerSalle();
   table = creerTable();
   fenetre = creerFenetre();
   chaise = creerChaise();
-<<<<<<< HEAD
+  lumiere = creerLumiere();
+  
   ordinateurGauche = creerOrdinateur(0);
   ordinateurDroite = creerOrdinateur(1);
-=======
-  ordinateur = creerOrdinateur(1);
->>>>>>> 5b5813333b570ad6b7ea9ad7b98e040cfcd284af
-  
+
   keyMap = new HashMap<Character, Boolean>();
 }
 
@@ -51,8 +35,21 @@ void draw(){
   background(255);
   translate(width/2, height/2, 0);
   bougerCamera();
-  
   shader(shader);
+  
+  pushMatrix();
+  translate(longueurLumiere, 0, longueurLumiere*2);
+    for(int i = 0; i < 3; i++){
+      for(int j = 0; j < 2; j++){
+        pushMatrix();
+          translate((i*longueurLumiere*2), 0, j*longueurLumiere);
+          shape(this.lumiere);
+        popMatrix();
+      }
+    }
+  popMatrix();
+
+ 
   shape(this.salle);
   
   //table professeur
@@ -95,9 +92,6 @@ void draw(){
     rotateY(PI);
     shape(this.ordinateurDroite);
   popMatrix();
-  
-  shape(ordinateurDroite);
-  shape(ordinateurGauche);
   
   pushMatrix();
     translate(210, hauteurOrigineTables , (longueurPlateau/4));

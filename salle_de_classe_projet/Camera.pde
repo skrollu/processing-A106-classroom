@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-import java.util.HashMap;
-=======
-import java.util.Map;
->>>>>>> 5b5813333b570ad6b7ea9ad7b98e040cfcd284af
-
 // Multiples keys pressed at the same time 
 HashMap<Character, Boolean> keyMap;
 
@@ -103,10 +97,8 @@ void bougerCamera() {
 }
 
 void keyPressed(KeyEvent event) {
-<<<<<<< HEAD
+
   //peut etre amélioré
-=======
->>>>>>> 5b5813333b570ad6b7ea9ad7b98e040cfcd284af
   if(key == CODED){
     if(keyCode == LEFT){
       keyMap.put('k', true);

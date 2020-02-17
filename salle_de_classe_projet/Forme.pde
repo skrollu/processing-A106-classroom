@@ -34,16 +34,6 @@ class Forme{
     cube.beginShape(QUADS);
     cube.stroke(0); 
     cube.fill(couleur);
-<<<<<<< HEAD
-
-      cube.textureMode(NORMAL);
-      cube.texture(texture);
-      cube.shininess(200.0);
-      cube.emissive(0, 0, 0);
-      cube.normal(0, 0, 1);
-=======
-    cube.beginShape(QUADS);
-    
     
     cube.textureMode(NORMAL);
     cube.texture(texture);
@@ -52,8 +42,7 @@ class Forme{
     cube.normal(0, 0, 1);
 
     texture(texture);
->>>>>>> 5b5813333b570ad6b7ea9ad7b98e040cfcd284af
-    
+
     //ABCD
     cube.vertex(a.x, a.y, a.z);    
     cube.vertex(b.x, b.y, b.z);   
