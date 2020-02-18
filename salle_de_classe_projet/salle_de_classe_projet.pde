@@ -153,11 +153,15 @@ void draw(){
    
   //chaises élèves
   pushMatrix();
-    translate(270, hauteurOrigineChaises, 65);
+    translate(245, hauteurOrigineChaises, (((longueurPlateau/2) - longueurAssiseChaise) /2 ));
     for(int i = 0; i < 4; i++){    
       for(int j = 0; j < 3; j++){
         pushMatrix();
           translate(i*(largeurPlateau + espacementTables), 0, j*longueurPlateau);
+          shape(this.chaise);
+        popMatrix();
+        pushMatrix();
+          translate(i*(largeurPlateau + espacementTables), 0, (j*longueurPlateau) + longueurPlateau/2);
           shape(this.chaise);
         popMatrix();
       }     
