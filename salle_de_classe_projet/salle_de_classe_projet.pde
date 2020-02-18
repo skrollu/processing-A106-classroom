@@ -2,8 +2,17 @@ import java.util.HashMap;
 
 PShader shaderTexture;
 PShader shaderLumiere;
+
 PImage boisChaise;
 PImage boisBleu;
+PImage linoRouge;
+PImage tableauVert;
+PImage peintureMarron;
+PImage peintureCreme;
+PImage porteGrise;
+PImage plafondBlanc;
+PImage fondEcran;
+PImage clavierTexture;
 
 PShape salle;
 PShape table;
@@ -13,20 +22,23 @@ PShape ordinateurDroite;
 PShape ordinateurGauche;
 PShape lumiere;
 
-PVector[] lightColor = {
-
-
-};
-
-
 void setup() {
 
   size(1980, 1200, P3D);
   shaderLumiere = loadShader("Lambert1DiffuseFrag.glsl","Lambert1DiffuseVert.glsl");
   shaderTexture = loadShader("LightShaderTexFrag.glsl","LightShaderTexVert.glsl");
+
   boisChaise = loadImage("boisChaise.jpg");
   boisBleu = loadImage("boisBleu.jpg");
- 
+  linoRouge = loadImage("linoRouge3.jpg");
+  tableauVert = loadImage("tableau.png");
+  peintureMarron = loadImage("peintureMarron.jpg");
+  peintureCreme = loadImage("peintureCreme.jpg");
+  porteGrise = loadImage("porte.jpg");
+  plafondBlanc = loadImage("plafond.jpg");
+  fondEcran = loadImage("fondEcran.png");
+  clavierTexture = loadImage("clavier.jpg");
+
   salle = creerSalle();
   table = creerTable();
   fenetre = creerFenetre();

@@ -22,6 +22,15 @@ float centreX = 980;
 float centreY = 170;
 float centreZ = 300;
 
+float centreZMin = -500;
+float centreZMax = 1000;
+
+float centreXMin = -1000;
+float centreXMax = 2000;
+
+float centreYMin = -300;
+float centreYMax = 600;
+
 float vitesseDeplacement = 6;
 
 
@@ -82,10 +91,22 @@ void bougerCamera() {
     
     //Direction Regard Camera (mouvement du centre) (touches directionnelles)
     if(keyMap.containsKey('k') && keyMap.get('k')){
-      centreZ -= vitesseDeplacement;  
+      if(centreZ > centreZMin){
+        centreZ -= vitesseDeplacement;  
+      } else {
+        if(centreX > centreXMin){
+          centreX -= vitesseDeplacement;
+        }
+      }
     }
     if(keyMap.containsKey('m') && keyMap.get('m')){
-      centreZ += vitesseDeplacement;  
+      if(centreZ < centreZMax){
+        centreZ += vitesseDeplacement;  
+      } else {
+        if(centreX < centreXMax){
+          centreX += vitesseDeplacement;
+        }
+      } 
     }
     if(keyMap.containsKey('o') && keyMap.get('o')){
       centreY -= vitesseDeplacement;  
@@ -97,6 +118,8 @@ void bougerCamera() {
 }
 
 void keyPressed(KeyEvent event) {
+  
+  print("Centre ( " + centreX +" , " + centreY +" , " + centreZ +" )"); 
 
   //peut etre amélioré
   if(key == CODED){
