@@ -2,25 +2,12 @@
 //pied: 5*72.5*5
 
 PShape creerTable(){
-  
-  PShape plateau;
-  PShape pied1;
-  PShape pied2;
-  PShape pied3;
-  PShape pied4;
-  
-  textureMode(NORMAL);
-  Forme formePlateau = new Forme(longueurPlateau, largeurPlateau, hauteurPlateau, 255, boisBleu);
-  Forme formePied1 = new Forme(5, 5, 72.5, 0, null);
-  Forme formePied2 = new Forme(5, 5, 72.5, 0, null);
-  Forme formePied3 = new Forme(5, 5, 72.5, 0, null);
-  Forme formePied4 = new Forme(5, 5, 72.5, 0, null);
-  
-  plateau = formePlateau.getForme();
-  pied1 = formePied1.getForme(); 
-  pied2 = formePied2.getForme();
-  pied3 = formePied3.getForme();
-  pied4 = formePied4.getForme();
+
+  PShape plateau = creerForme(longueurPlateau, largeurPlateau, hauteurPlateau, 255, boisBleu);
+  PShape pied1 = creerForme(5, 5, 72.5, 0, null);
+  PShape pied2 = creerForme(5, 5, 72.5, 0, null);
+  PShape pied3 = creerForme(5, 5, 72.5, 0, null);
+  PShape pied4 = creerForme(5, 5, 72.5, 0, null);
   
   PShape table = createShape(GROUP);
 

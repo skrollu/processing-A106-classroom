@@ -1,27 +1,12 @@
 PShape creerChaise(){
 
-  PShape chaise;
-  PShape assise; 
-  PShape piedAvant1;
-  PShape piedAvant2;
-  PShape piedArriere1;
-  PShape piedArriere2;
-  PShape dossier;
-  
-  Forme formeAssise = new Forme(longueurAssiseChaise, largeurAssiseChaise, hauteurAssiseChaise, 255, boisChaise);
-  Forme formePiedAvant1 = new Forme(longueurPiedChaise, largeurPiedChaise, hauteurPiedAvantChaise, color(235, 229, 52), null);
-  Forme formePiedAvant2 = new Forme(longueurPiedChaise, largeurPiedChaise, hauteurPiedAvantChaise, color(235, 229, 52), null);
-  Forme formePiedArriere1 = new Forme(longueurPiedChaise, largeurPiedChaise, hauteurPiedArriereChaise, color(235, 229, 52), null);
-  Forme formePiedArriere2 = new Forme(longueurPiedChaise, largeurPiedChaise, hauteurPiedArriereChaise, color(235, 229, 52), null);
-  Forme formeDossier = new Forme(longueurDossierChaise, largeurDossierChaise, hauteurDossierChaise, 255, boisChaise);
-  
-  assise = formeAssise.getForme();
-  piedAvant1 = formePiedAvant1.getForme();
-  piedAvant2 = formePiedAvant2.getForme();
-  piedArriere1 = formePiedArriere1.getForme();
-  piedArriere2 = formePiedArriere2.getForme();
-  dossier = formeDossier.getForme();
-  
+  PShape assise = creerForme(longueurAssiseChaise, largeurAssiseChaise, hauteurAssiseChaise, 255, boisChaise);
+  PShape piedAvant1 = creerForme(longueurPiedChaise, largeurPiedChaise, hauteurPiedAvantChaise, color(235, 229, 52), null);
+  PShape piedAvant2 = creerForme(longueurPiedChaise, largeurPiedChaise, hauteurPiedAvantChaise, color(235, 229, 52), null);
+  PShape piedArriere1 = creerForme(longueurPiedChaise, largeurPiedChaise, hauteurPiedArriereChaise, color(235, 229, 52), null);
+  PShape piedArriere2 = creerForme(longueurPiedChaise, largeurPiedChaise, hauteurPiedArriereChaise, color(235, 229, 52), null);
+  PShape dossier = creerForme(longueurDossierChaise, largeurDossierChaise, hauteurDossierChaise, 255, boisChaise);
+    
   chaise = createShape(GROUP);
   
   piedAvant1.translate(0,hauteurAssiseChaise,0);

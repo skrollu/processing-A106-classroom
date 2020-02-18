@@ -1,15 +1,7 @@
-class Forme{
-  
-  float longueur, largeur, hauteur;
-  PVector a,b,c,d,e,f,g,h;
-  
-  PShape forme;
+  PShape creerForme(float longueur,float largeur, float hauteur, color couleur, PImage texture){
 
-  public Forme (float longueur,float largeur, float hauteur, color couleur, PImage texture){
-    this.longueur = longueur;
-    this.largeur = largeur;
-    this.hauteur = hauteur;
-    
+    PVector a,b,c,d,e,f,g,h;
+     
     //Cote entrée + tableau
     a = new PVector(0, 0, 0);
     b = new PVector(0, hauteur, 0);
@@ -20,15 +12,6 @@ class Forme{
     f = new PVector(longueur, hauteur, 0);
     g = new PVector(longueur, hauteur, largeur);
     h = new PVector(longueur, 0, largeur);
-    
-    forme = creerForme(couleur, texture);
-  }
- 
-  PShape getForme(){
-    return this.forme;
-  }
-  
-  PShape creerForme(color couleur, PImage texture){
     
     PShape cube = createShape();
     cube.beginShape(QUADS);
@@ -83,4 +66,3 @@ class Forme{
     
     return cube;
   }
-}
