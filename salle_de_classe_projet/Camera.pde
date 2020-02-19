@@ -100,13 +100,7 @@ void bougerCamera() {
       }
     }
     if(keyMap.containsKey('m') && keyMap.get('m')){
-      if(centreZ < centreZMax){
-        centreZ += vitesseDeplacement;  
-      } else {
-        if(centreX < centreXMax){
-          centreX += vitesseDeplacement;
-        }
-      } 
+      centreZ += vitesseDeplacement;  
     }
     if(keyMap.containsKey('o') && keyMap.get('o')){
       centreY -= vitesseDeplacement;  
