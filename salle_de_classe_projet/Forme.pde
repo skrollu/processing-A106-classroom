@@ -20,9 +20,9 @@
     
     cube.textureMode(NORMAL);
     cube.texture(texture);
-    cube.shininess(200.0);
+    cube.shininess(80.0);
     cube.emissive(0, 0, 0);
-    cube.normal(0, 0, 1);
+    cube.normal(1, -1, 1);
 
     //ABCD
     cube.vertex(a.x, a.y, a.z, 0, 0);    

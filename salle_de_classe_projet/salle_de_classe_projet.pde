@@ -2,6 +2,7 @@ import java.util.HashMap;
 
 PShader shaderTexture;
 PShader shaderLumiere;
+PShader shaderLumiereBlinnPhong;
 
 PImage boisChaise;
 PImage boisBleu;
@@ -13,6 +14,7 @@ PImage porteGrise;
 PImage plafondBlanc;
 PImage fondEcran;
 PImage clavierTexture;
+PImage metalNoir;
 
 PShape salle;
 PShape table;
@@ -24,9 +26,10 @@ PShape lumiere;
 
 void setup() {
 
-  size(1980, 1200, P3D);
+  size(900, 600, P3D);
   shaderLumiere = loadShader("Lambert1DiffuseFrag.glsl","Lambert1DiffuseVert.glsl");
   shaderTexture = loadShader("LightShaderTexFrag.glsl","LightShaderTexVert.glsl");
+  shaderLumiereBlinnPhong = loadShader("blinnPhongFragment.glsl", "blinnPhongVertex.glsl");
 
   boisChaise = loadImage("boisChaise.jpg");
   boisBleu = loadImage("boisBleu.jpg");
@@ -38,6 +41,7 @@ void setup() {
   plafondBlanc = loadImage("plafond.jpg");
   fondEcran = loadImage("fondEcran.png");
   clavierTexture = loadImage("clavier.jpg");
+  metalNoir = loadImage("metalNoir.jpg");
 
   salle = creerSalle();
   table = creerTable();
@@ -56,17 +60,23 @@ void draw(){
   translate(width/2, height/2, 0);
   bougerCamera();
 
+  shader(shaderLumiereBlinnPhong);
+  //shader(shaderLumiere);
   //Point Light
-  shader(shaderLumiere);
+  //shader(shaderLumiere);
+  
+  
+  //ambientLight(10, 10, 10);
+
   for(int i=0; i<lightPos.length; i++) {
       pushMatrix();
           noStroke();
+          //lightSpecular(lightColor[i].x, lightColor[i].y, lightColor[i].z);
           translate(lightPos[i].x, lightPos[i].y, lightPos[i].z);
-          box(10, 10, 10);
+          //pointLight(lightColor[i].x, lightColor[i].y, lightColor[i].z, 
+          //           lightPos[i].x, lightPos[i].y, lightPos[i].z);
       popMatrix();
   }  
-
-  shader(shaderTexture);
   
   //mise en scene des neons
   pushMatrix();

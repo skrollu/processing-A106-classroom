@@ -2,9 +2,9 @@ PShape creerSalle(){
 
   //PShape piece = creerForme(980, 595, 280, 255); //modèle de départ de la salle
   PShape murTableau = creerForme(5, 605, 280, color(225, 192, 157), peintureCreme);
-  PShape murCouloir = creerForme(980, 5, 280, color(77, 51, 25), peintureMarron);
+  PShape murCouloir = creerForme(980, 5, 280, color(77, 51, 25), peintureCreme);
   PShape murFond = creerForme(5, 605, 280, color(243, 230, 216), peintureCreme);
-  PShape murFenetre = creerForme(980, 5, 280, color(243, 230, 216), peintureMarron);
+  PShape murFenetre = creerForme(980, 5, 280, color(243, 230, 216), peintureCreme);
   
   colorMode(HSB, 100);
   PShape murSol = creerForme(990, 605, 5, color(0, 100, 71), linoRouge);
