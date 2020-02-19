@@ -26,8 +26,8 @@ float hauteurPiedAvantChaise = 50;
 float longueurAssiseChaise = 50;
 float largeurAssiseChaise = 50;
 float hauteurAssiseChaise = 3;
-float longueurDossierChaise = 46;
-float largeurDossierChaise = 1;
+float longueurDossierChaise = 1;
+float largeurDossierChaise = 46;
 float hauteurDossierChaise = 40;
 
 float largeurEcran = 32;

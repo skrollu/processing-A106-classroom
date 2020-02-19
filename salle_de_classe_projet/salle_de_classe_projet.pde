@@ -15,6 +15,7 @@ PImage plafondBlanc;
 PImage fondEcran;
 PImage clavierTexture;
 PImage metalNoir;
+PImage briqueRouge;
 
 PShape salle;
 PShape table;
@@ -23,6 +24,7 @@ PShape chaise;
 PShape ordinateurDroite;
 PShape ordinateurGauche;
 PShape lumiere;
+PShape batiment;
 
 void setup() {
 
@@ -42,12 +44,14 @@ void setup() {
   fondEcran = loadImage("fondEcran.png");
   clavierTexture = loadImage("clavier.jpg");
   metalNoir = loadImage("metalNoir.jpg");
+  briqueRouge = loadImage("briqueRouge.jpg");
 
   salle = creerSalle();
   table = creerTable();
   fenetre = creerFenetre();
   chaise = creerChaise();
   lumiere = creerLumiere();
+  batiment = creerBatiment();
   
   ordinateurGauche = creerOrdinateur(0);
   ordinateurDroite = creerOrdinateur(1);
@@ -61,21 +65,27 @@ void draw(){
   bougerCamera();
 
   shader(shaderLumiereBlinnPhong);
+
+  //Batiment
+  pushMatrix();
+    translate(-1500, -400, 2000);
+    shape(batiment);
+  popMatrix();
+
   //shader(shaderLumiere);
   //Point Light
   //shader(shaderLumiere);
-  
-  
+
   //ambientLight(10, 10, 10);
   
   //BRICE
-  //pushMatrix();
-  //  lightSpecular(200, 200, 200);
-  //  pointLight(200, 200, 200, 1, hauteurSalle/2, largeurSalle/2);
-  //  translate(longueurSalle/2, 1, largeurSalle/2);
-  //  box(10,10,10);
-  //popMatrix();
-  
+  pushMatrix();
+    lightSpecular(200, 200, 200);
+    pointLight(200, 200, 200, 1, hauteurSalle/2, largeurSalle/2);
+    translate(longueurSalle/2, 1, largeurSalle/2);
+    box(10,10,10);
+  popMatrix();
+  /*
   for(int i=0; i<lightPos.length; i++) {
       pushMatrix();
           translate(lightPos[i].x, lightPos[i].y, lightPos[i].z);
@@ -88,7 +98,7 @@ void draw(){
                      lightPos[i].x, lightPos[i].y, lightPos[i].z);
           box(10,10,10);
       popMatrix();
-  }  
+  }  */
   
   //mise en scene des neons
   pushMatrix();

@@ -2,7 +2,7 @@
 HashMap<Character, Boolean> keyMap;
 
 // Distance de la camera au sujet.
-float rayon = 980;
+float rayon = 100;
 
 // Angle de la camera avec le sujet sur le plan XZ.
 float theta = 0; 
@@ -35,25 +35,25 @@ float vitesseDeplacement = 6;
 
 
 void bougerCamera() {
+ /* 
+  camera(
+    camX, camY, camZ,
+    0, 0, 0,
+    0, 1, 0
+  ); 
   
-  //camera(
-  //  camX, camY, camZ,
-  //  0, 0, 0,
-  //  0, 1, 0
-  //); 
+  if (mousePressed) {
+    // On incrémente l'angle :
+    theta = (theta + radians(pmouseX - mouseX)  * 0.2) %TWO_PI;
+    phi = (phi + radians(pmouseY - mouseY)  * 0.2) %TWO_PI;
   
-  //if (mousePressed) {
-  //  // On incrémente l'angle :
-  //  theta = (theta + radians(pmouseX - mouseX)  * 0.2) %TWO_PI;
-  //  phi = (phi + radians(pmouseY - mouseY)  * 0.2) %TWO_PI;
-    
-  //  // Calcul de la position cartésienne sur le
-  //  // plan XZ :
-  //  camX = rayon * cos(phi) * sin(theta);
-  //  camY = rayon * sin(phi);
-  //  camZ = rayon * cos(phi) * cos(theta);
-  //}
-  
+    // Calcul de la position cartésienne sur le
+    // plan XZ :
+    camX = rayon * cos(phi) * sin(theta);
+    camY = rayon * sin(phi);
+    camZ = rayon * cos(phi) * cos(theta);
+  }
+  */
   camera(
     eyeX, eyeY, eyeZ,
     centreX, centreY, centreZ,

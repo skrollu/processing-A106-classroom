@@ -7,25 +7,22 @@ PShape creerChaise(){
   PShape piedArriere2 = creerForme(longueurPiedChaise, largeurPiedChaise, hauteurPiedArriereChaise, color(235, 229, 52), null);
   PShape dossier = creerForme(longueurDossierChaise, largeurDossierChaise, hauteurDossierChaise, 255, boisChaise);
     
-  PShape chaise = createShape(GROUP);
+  PShape chaiseGroup = createShape(GROUP);
   
     piedAvant1.translate(0,hauteurAssiseChaise,0);
     piedAvant2.translate(0,hauteurAssiseChaise,longueurAssiseChaise-longueurPiedChaise);
     piedArriere1.translate(largeurAssiseChaise-largeurPiedChaise,hauteurPiedAvantChaise - hauteurPiedArriereChaise + hauteurAssiseChaise, 0);
     piedArriere2.translate(largeurAssiseChaise-largeurPiedChaise,hauteurPiedAvantChaise - hauteurPiedArriereChaise + hauteurAssiseChaise, longueurAssiseChaise-longueurPiedChaise);
     
-    
-    dossier.rotateY(-PI/2);
     dossier.translate(largeurAssiseChaise-(largeurPiedChaise/2), hauteurPiedAvantChaise - hauteurPiedArriereChaise + 7, longueurPiedChaise);
     
+    chaiseGroup.addChild(assise);
     
-    chaise.addChild(assise);
-    
-    chaise.addChild(piedAvant1);
-    chaise.addChild(piedAvant2);
-    chaise.addChild(piedArriere1);
-    chaise.addChild(piedArriere2);
-    chaise.addChild(dossier);
+    chaiseGroup.addChild(piedAvant1);
+    chaiseGroup.addChild(piedAvant2);
+    chaiseGroup.addChild(piedArriere1);
+    chaiseGroup.addChild(piedArriere2);
+    chaiseGroup.addChild(dossier);
    
-  return chaise;
+  return chaiseGroup;
 }
