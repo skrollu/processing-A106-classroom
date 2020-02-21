@@ -19,20 +19,21 @@ L: allumer la lumière
 
 La gestion des lumières étant mauvaise, je vous conseil de tester les deux modes pour explorer la Salle A 106.
 
-#### (Z-Q-S-D):
+#### Direction (Z-Q-S-D):
 Pour gérer le déplacement de notre caméra (nos yeux):
-Z: Avancer (Axe: X)
-S: Reculer (Axe: X)
-Q: Gauche (Axe: Z)
-D: Droite (Axe: Z)
 
-#### ()
+    Z: Avancer (Axe: X)
+    S: Reculer (Axe: X)
+    Q: Gauche (Axe: Z)
+    D: Droite (Axe: Z)
+
+#### Regard (↑ Haut, ↓ Bas, ← Gauche, ➔ Droite)
 Pour gérer la direction de notre regard (Centre de la caméra), utiliser les flèches directionnelles:
 
-↑: Haut (Axe Y):
-↓: Bas (Axe Y):
-←: Gauche (Axe Z):
-➔: Droite (Axe Z):
+    ↑: Haut (Axe Y):
+    ↓: Bas (Axe Y):
+    ←: Gauche (Axe Z):
+    ➔: Droite (Axe Z):
 
 ### Gestion de la Caméra
 
