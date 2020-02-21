@@ -3,11 +3,11 @@
 
 PShape creerTable(){
 
-  PShape plateau = creerForme(longueurPlateau, largeurPlateau, hauteurPlateau, 255, boisBleu, 50, 0);
-  PShape pied1 = creerForme(5, 5, 72.5, 0, null, 200, 0);
-  PShape pied2 = creerForme(5, 5, 72.5, 0, null, 200, 0);
-  PShape pied3 = creerForme(5, 5, 72.5, 0, null, 200, 0);
-  PShape pied4 = creerForme(5, 5, 72.5, 0, null, 200, 0);
+  PShape plateau = creerForme(longueurPlateau, largeurPlateau, hauteurPlateau, 255, boisBleu, shininessObjetBrillant, 0);
+  PShape pied1 = creerForme(5, 5, 72.5, 0, noir, shininessObjetBrillant, 0);
+  PShape pied2 = creerForme(5, 5, 72.5, 0, noir, shininessObjetBrillant, 0);
+  PShape pied3 = creerForme(5, 5, 72.5, 0, noir, shininessObjetBrillant, 0);
+  PShape pied4 = creerForme(5, 5, 72.5, 0, noir, shininessObjetBrillant, 0);
   
   PShape table = createShape(GROUP);
 

@@ -21,6 +21,10 @@ PImage fondEcran;
 PImage clavierTexture;
 PImage metalNoir;
 PImage briqueRouge;
+PImage noir;
+PImage jaune;
+PImage gris;
+PImage vide;
 
 PShape salle;
 PShape table;
@@ -35,8 +39,8 @@ void setup() {
 
   size(900, 600, P3D);
   //shaderLumiere = loadShader("Lambert1DiffuseFrag.glsl","Lambert1DiffuseVert.glsl");
-  //shaderTexture = loadShader("LightShaderTexFrag.glsl","LightShaderTexVert.glsl");
-  shaderLumiereBlinnPhong = loadShader("blinnPhongFragment.glsl", "blinnPhongVertex.glsl");
+  shaderTexture = loadShader("LightShaderTexFrag.glsl","LightShaderTexVert.glsl");
+  //shaderLumiereBlinnPhong = loadShader("blinnPhongFragment.glsl", "blinnPhongVertex.glsl");
 
   boisChaise = loadImage("boisChaise.jpg");
   boisBleu = loadImage("boisBleu.jpg");
@@ -50,6 +54,10 @@ void setup() {
   clavierTexture = loadImage("clavier.jpg");
   metalNoir = loadImage("metalNoir.jpg");
   briqueRouge = loadImage("briqueRouge.jpg");
+  noir = loadImage("noir.jpg");
+  jaune = loadImage("jaune.jpg");
+  gris = loadImage("gris.jpg");
+  vide = loadImage("vide.png");
 
   salle = creerSalle();
   table = creerTable();
@@ -69,7 +77,7 @@ void draw(){
   translate(width/2, height/2, 0);
   bougerCamera();
 
-  shader(shaderLumiereBlinnPhong);
+  shader(shaderTexture);
   dessineLumiere();
 
   //Batiment

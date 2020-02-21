@@ -2,11 +2,11 @@ PShape creerFenetre () {
   
   //PShape fenetre = creerForme(longueurFenetre,epaisseurFenetre,hauteurFenetre, color(237, 237, 237, 40), null);
 
-  PShape fenetreBordHaut= creerForme(longueurFenetre, epaisseurFenetre, 5, 20, null, 100, 0);
-  PShape fenetreBordBas = creerForme(longueurFenetre, epaisseurFenetre, 5, 20, null, 100, 0);
-  PShape fenetreBordGauche = creerForme(5, epaisseurFenetre, hauteurFenetre-10, 20, null, 100, 0);
-  PShape fenetreBordDroite = creerForme(5, epaisseurFenetre, hauteurFenetre-10, 20, null, 100, 0);
-  PShape fenetreVerre = creerForme(longueurFenetre-10, epaisseurFenetre,hauteurFenetre-10, color(237, 237, 237, 10), null, 200, 0);
+  PShape fenetreBordHaut= creerForme(longueurFenetre, epaisseurFenetre, 5, 20, noir, 100, 0);
+  PShape fenetreBordBas = creerForme(longueurFenetre, epaisseurFenetre, 5, 20, noir, 100, 0);
+  PShape fenetreBordGauche = creerForme(5, epaisseurFenetre, hauteurFenetre-10, 20, noir, 100, 0);
+  PShape fenetreBordDroite = creerForme(5, epaisseurFenetre, hauteurFenetre-10, 20, noir, 100, 0);
+  PShape fenetreVerre = creerForme(longueurFenetre-10, epaisseurFenetre,hauteurFenetre-10, color(237, 237, 237, 10), vide, 200, 0);
 
   PShape fenetreGroup = createShape(GROUP);
 

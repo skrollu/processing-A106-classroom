@@ -15,24 +15,24 @@
     
     PShape forme = createShape();
     forme.beginShape(QUADS);
-    forme.noStroke(); 
-    forme.fill(couleur);
+    forme.noStroke();  //créer une erreur: Your shader needs to be of LIGHT type to render this geometry properly, using default shader instead.
+    //forme.fill(couleur);
     
     forme.textureMode(NORMAL);
     forme.texture(texture);
 
     forme.shininess(shininess);
-    forme.shininess(emissive);
+    forme.emissive(emissive);
    
     //ABCD
-    forme.normal(1, 0, 0);
+    forme.normal(-1, 0, 0);
     forme.vertex(a.x, a.y, a.z, 1, 0);    
     forme.vertex(b.x, b.y, b.z, 1, 1);   
     forme.vertex(c.x, c.y, c.z, 0, 1);   
     forme.vertex(d.x, d.y, d.z, 0, 0);  
      
     //ABFE
-    forme.normal(0, 0, 1);
+    forme.normal(0, 0, -1);
     forme.vertex(a.x, a.y, a.z, 0, 0);    
     forme.vertex(b.x, b.y, b.z, 1, 0);  
     forme.vertex(f.x, f.y, f.z, 1, 1);
@@ -46,7 +46,7 @@
     forme.vertex(f.x, f.y, f.z, 0, 1);
      
     //HDCG
-    forme.normal(0, 0, -1);
+    forme.normal(0, 0, 1);
     forme.vertex(h.x, h.y, h.z, 1, 0);
     forme.vertex(d.x, d.y, d.z, 0, 0);   
     forme.vertex(c.x, c.y, c.z, 0, 1); 
@@ -60,7 +60,7 @@
     forme.vertex(d.x, d.y, d.z, 0, 1);
       
     //BFGC
-    forme.normal(0, -1, 0);
+    forme.normal(0, 1, 0);
     forme.vertex(b.x, b.y, b.z, 0, 0);    
     forme.vertex(f.x, f.y, f.z, 1, 0);
     forme.vertex(g.x, g.y, g.z, 1, 1);
