@@ -1,11 +1,11 @@
 PShape creerChaise(){
 
-  PShape assise = creerForme(longueurAssiseChaise, largeurAssiseChaise, hauteurAssiseChaise, 255, boisChaise);
-  PShape piedAvant1 = creerForme(longueurPiedChaise, largeurPiedChaise, hauteurPiedAvantChaise, color(235, 229, 52), null);
-  PShape piedAvant2 = creerForme(longueurPiedChaise, largeurPiedChaise, hauteurPiedAvantChaise, color(235, 229, 52), null);
-  PShape piedArriere1 = creerForme(longueurPiedChaise, largeurPiedChaise, hauteurPiedArriereChaise, color(235, 229, 52), null);
-  PShape piedArriere2 = creerForme(longueurPiedChaise, largeurPiedChaise, hauteurPiedArriereChaise, color(235, 229, 52), null);
-  PShape dossier = creerForme(longueurDossierChaise, largeurDossierChaise, hauteurDossierChaise, 255, boisChaise);
+  PShape assise = creerForme(longueurAssiseChaise, largeurAssiseChaise, hauteurAssiseChaise, 255, boisChaise, 100, 0);
+  PShape piedAvant1 = creerForme(longueurPiedChaise, largeurPiedChaise, hauteurPiedAvantChaise, color(235, 229, 52), null, 200, 0);
+  PShape piedAvant2 = creerForme(longueurPiedChaise, largeurPiedChaise, hauteurPiedAvantChaise, color(235, 229, 52), null, 200, 0);
+  PShape piedArriere1 = creerForme(longueurPiedChaise, largeurPiedChaise, hauteurPiedArriereChaise, color(235, 229, 52), null, 200, 0);
+  PShape piedArriere2 = creerForme(longueurPiedChaise, largeurPiedChaise, hauteurPiedArriereChaise, color(235, 229, 52), null,200, 0);
+  PShape dossier = creerForme(longueurDossierChaise, largeurDossierChaise, hauteurDossierChaise, 255, boisChaise, 100, 0);
     
   PShape chaiseGroup = createShape(GROUP);
   

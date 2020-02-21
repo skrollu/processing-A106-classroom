@@ -29,8 +29,8 @@ PShape batiment;
 void setup() {
 
   size(900, 600, P3D);
-  shaderLumiere = loadShader("Lambert1DiffuseFrag.glsl","Lambert1DiffuseVert.glsl");
-  shaderTexture = loadShader("LightShaderTexFrag.glsl","LightShaderTexVert.glsl");
+  //shaderLumiere = loadShader("Lambert1DiffuseFrag.glsl","Lambert1DiffuseVert.glsl");
+  //shaderTexture = loadShader("LightShaderTexFrag.glsl","LightShaderTexVert.glsl");
   shaderLumiereBlinnPhong = loadShader("blinnPhongFragment.glsl", "blinnPhongVertex.glsl");
 
   boisChaise = loadImage("boisChaise.jpg");
@@ -65,40 +65,13 @@ void draw(){
   bougerCamera();
 
   shader(shaderLumiereBlinnPhong);
+  dessineLumiere();
 
   //Batiment
   pushMatrix();
     translate(-1500, -400, 2000);
     shape(batiment);
-  popMatrix();
-
-  //shader(shaderLumiere);
-  //Point Light
-  //shader(shaderLumiere);
-
-  //ambientLight(10, 10, 10);
-  
-  //BRICE
-  pushMatrix();
-    lightSpecular(200, 200, 200);
-    pointLight(200, 200, 200, 1, hauteurSalle/2, largeurSalle/2);
-    translate(longueurSalle/2, 1, largeurSalle/2);
-    box(10,10,10);
-  popMatrix();
-  /*
-  for(int i=0; i<lightPos.length; i++) {
-      pushMatrix();
-          translate(lightPos[i].x, lightPos[i].y, lightPos[i].z);
-          lightSpecular(200, 200, 200);
-          noStroke();
-          lightSpecular(200, 200, 200);
-          emissive(lightColor[i].x, lightColor[i].y, lightColor[i].z);
-          
-          pointLight(200, 200, 200, 
-                     lightPos[i].x, lightPos[i].y, lightPos[i].z);
-          box(10,10,10);
-      popMatrix();
-  }  */
+  popMatrix();  
   
   //mise en scene des neons
   pushMatrix();

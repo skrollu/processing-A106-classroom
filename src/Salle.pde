@@ -1,27 +1,27 @@
 PShape creerSalle(){
 
   //PShape piece = creerForme(980, 595, 280, 255); //modèle de départ de la salle
-  PShape murTableau = creerForme(epaisseurMur, largeurSalle+10, hauteurSalle, color(225, 192, 157), peintureMarron);
-  PShape murCouloir = creerForme(longueurSalle, epaisseurMur, hauteurSalle, color(77, 51, 25), peintureMarron);
-  PShape murFond = creerForme(epaisseurMur, largeurSalle+10, hauteurSalle, color(243, 230, 216), peintureCreme);
+  PShape murTableau = creerForme(epaisseurMur, largeurSalle+10, hauteurSalle, color(225, 192, 157), peintureMarron, 60, 0);
+  PShape murCouloir = creerForme(longueurSalle, epaisseurMur, hauteurSalle, color(77, 51, 25), peintureMarron, 60, 0);
+  PShape murFond = creerForme(epaisseurMur, largeurSalle+10, hauteurSalle, color(243, 230, 216), peintureCreme, 60, 0);
   
   //PShape murFenetre = creerForme(longueurSalle, epaisseurMur, hauteurSalle, color(243, 230, 216), peintureCreme);
-  PShape murFenetreHaut = creerForme(longueurSalle, epaisseurMur, hauteurOrigineFenetre, color(243, 230, 216), peintureCreme);
-  PShape murFenetreBas = creerForme(longueurSalle, epaisseurMur, hauteurSalle-hauteurFenetre-hauteurOrigineFenetre, color(243, 230, 216), peintureCreme);
-  PShape murFenetreDroite = creerForme(longueurSalle - (( 4 * longueurFenetre ) + longueurOrigineFenetre + espaceMurEntreFenetre), 5, hauteurSalle, color(243, 230, 216), peintureCreme);
-  PShape murFenetreGauche = creerForme(longueurOrigineFenetre, epaisseurMur, hauteurSalle, color(243, 230, 216), peintureCreme);
-  PShape murEntreFenetre = creerForme(espaceMurEntreFenetre, epaisseurMur*3, hauteurSalle, color(243, 230, 216), peintureCreme);
+  PShape murFenetreHaut = creerForme(longueurSalle, epaisseurMur, hauteurOrigineFenetre, color(243, 230, 216), peintureCreme, 60,0);
+  PShape murFenetreBas = creerForme(longueurSalle, epaisseurMur, hauteurSalle-hauteurFenetre-hauteurOrigineFenetre, color(243, 230, 216), peintureCreme, 60, 0);
+  PShape murFenetreDroite = creerForme(longueurSalle - (( 4 * longueurFenetre ) + longueurOrigineFenetre + espaceMurEntreFenetre), 5, hauteurSalle, color(243, 230, 216), peintureCreme, 60, 0);
+  PShape murFenetreGauche = creerForme(longueurOrigineFenetre, epaisseurMur, hauteurSalle, color(243, 230, 216), peintureCreme, 60, 0);
+  PShape murEntreFenetre = creerForme(espaceMurEntreFenetre, epaisseurMur*3, hauteurSalle, color(243, 230, 216), peintureCreme, 60, 0);
 
   colorMode(HSB, 100);
-  PShape murSol = creerForme(longueurSalle+10, largeurSalle+10, 5, color(0, 100, 71), linoRouge);
+  PShape murSol = creerForme(longueurSalle+10, largeurSalle+10, 5, color(0, 100, 71), linoRouge, 60, 0);
   colorMode(RGB, 255);
-  PShape murPlafond = creerForme(longueurSalle+10, largeurSalle+10, 5, color(219, 204, 204), plafondBlanc);
+  PShape murPlafond = creerForme(longueurSalle+10, largeurSalle+10, 5, color(219, 204, 204), plafondBlanc, 60, 0);
 
-  PShape porte = creerForme(100,7,200, color(52, 235, 229), porteGrise);
-  PShape porteFond = creerForme(7,100,200, color(52, 235, 229), porteGrise);
-  PShape porteTableau = creerForme(7,100,200, color(52, 235, 229), porteGrise);
+  PShape porte = creerForme(100,7,200, color(52, 235, 229), porteGrise, 80, 0);
+  PShape porteFond = creerForme(7,100,200, color(52, 235, 229), porteGrise, 80, 0);
+  PShape porteTableau = creerForme(7,100,200, color(52, 235, 229), porteGrise, 80,0);
 
-  PShape tableau = creerForme(7,400,140, 20 , tableauVert);
+  PShape tableau = creerForme(7,400,140, 20 , tableauVert, 0, 20);
   
   PShape salle = createShape(GROUP);
   

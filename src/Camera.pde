@@ -22,16 +22,8 @@ float centreX = 980;
 float centreY = 170;
 float centreZ = 300;
 
-float centreZMin = -500;
-float centreZMax = 1000;
-
-float centreXMin = -1000;
-float centreXMax = 2000;
-
-float centreYMin = -300;
-float centreYMax = 600;
-
-float vitesseDeplacement = 6;
+float sensibiliteCamera = 10;
+float vitesseDeplacement = 5;
 
 
 void bougerCamera() {
@@ -90,73 +82,68 @@ void bougerCamera() {
     
     
     //Direction Regard Camera (mouvement du centre) (touches directionnelles)
+    if(keyMap.containsKey('h') && keyMap.get('h')){
+        centreZ -= sensibiliteCamera;  
+    }
     if(keyMap.containsKey('k') && keyMap.get('k')){
-      if(centreZ > centreZMin){
-        centreZ -= vitesseDeplacement;  
-      } else {
-        if(centreX > centreXMin){
-          centreX -= vitesseDeplacement;
-        }
-      }
+      centreZ += sensibiliteCamera;  
     }
-    if(keyMap.containsKey('m') && keyMap.get('m')){
-      centreZ += vitesseDeplacement;  
+    if(keyMap.containsKey('u') && keyMap.get('u')){
+      centreY -= sensibiliteCamera;  
     }
-    if(keyMap.containsKey('o') && keyMap.get('o')){
-      centreY -= vitesseDeplacement;  
-    }
-   if(keyMap.containsKey('l') && keyMap.get('l')){
-      centreY += vitesseDeplacement;  
+   if(keyMap.containsKey('j') && keyMap.get('j')){
+      centreY += sensibiliteCamera;  
     }
    
 }
 
 void keyPressed(KeyEvent event) {
   
-  print("Centre ( " + centreX +" , " + centreY +" , " + centreZ +" )"); 
+  //print("Centre ( " + centreX +" , " + centreY +" , " + centreZ +" )"); 
 
-  //peut etre amélioré
+  //peut etre amélioré on associe les touches "coded" flèches directionnels à des touches non utilisées du clavier par
+  //notre croquis k,m,o,l dans le keyMap.
   if(key == CODED){
     if(keyCode == LEFT){
-      keyMap.put('k', true);
+      keyMap.put('h', true);
     }
     if(keyCode == RIGHT){
-      keyMap.put('m', true);      
+      keyMap.put('k', true);      
     }
     if(keyCode == UP){
-      keyMap.put('o', true);
+      keyMap.put('u', true);
     }
     if(keyCode == DOWN){
-      keyMap.put('l', true);      
+      keyMap.put('j', true);      
     }
   }
   char k = event.getKey();
-  println("keyPressed => " + k);
+  //println("keyPressed => " + k);
   keyMap.put(Character.toLowerCase(k), true);
 }
 
 void keyReleased(KeyEvent event){
   if(key == CODED){
       if(keyCode == LEFT){
-        keyMap.put('k', false);
+        keyMap.put('h', false);
       }
       if(keyCode == RIGHT){
-        keyMap.put('m', false);      
+        keyMap.put('k', false);      
       }
       if(keyCode == UP){
-        keyMap.put('o', false);
+        keyMap.put('u', false);
       }
       if(keyCode == DOWN){
-        keyMap.put('l', false);   
+        keyMap.put('j', false);   
       }
   }
   char k = event.getKey();
-  println("keyReleased => " + k);
+  //println("keyReleased => " + k);
   keyMap.put(Character.toLowerCase(k), false);
 }
 
 void mousePressed(){
-  //centreZ = (pmouseX - mouseX);
+  
 }
 
 void mouseReleased(){

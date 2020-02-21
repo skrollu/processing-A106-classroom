@@ -1,4 +1,4 @@
-  PShape creerForme(float longueur,float largeur, float hauteur, color couleur, PImage texture){
+  PShape creerForme(float longueur,float largeur, float hauteur, color couleur, PImage texture, float shininess, float emissive){
 
     PVector a,b,c,d,e,f,g,h;
      
@@ -20,7 +20,9 @@
     
     forme.textureMode(NORMAL);
     forme.texture(texture);
-    forme.shininess(20.0);
+
+    forme.shininess(shininess);
+    forme.shininess(emissive);
    
     //ABCD
     forme.normal(1, 0, 0);
@@ -37,14 +39,14 @@
     forme.vertex(e.x, e.y, e.z, 0, 1);
   
     //EFGH
-    forme.normal(-0.3, 0, 0);
+    forme.normal(1, 0, 0);
     forme.vertex(e.x, e.y, e.z, 0, 0);
     forme.vertex(h.x, h.y, h.z, 1, 0);
     forme.vertex(g.x, g.y, g.z, 1, 1);
     forme.vertex(f.x, f.y, f.z, 0, 1);
      
     //HDCG
-    forme.normal(0, 0, -0.2);
+    forme.normal(0, 0, -1);
     forme.vertex(h.x, h.y, h.z, 1, 0);
     forme.vertex(d.x, d.y, d.z, 0, 0);   
     forme.vertex(c.x, c.y, c.z, 0, 1); 
@@ -58,7 +60,7 @@
     forme.vertex(d.x, d.y, d.z, 0, 1);
       
     //BFGC
-    forme.normal(0.5, 1, 0);
+    forme.normal(0, -1, 0);
     forme.vertex(b.x, b.y, b.z, 0, 0);    
     forme.vertex(f.x, f.y, f.z, 1, 0);
     forme.vertex(g.x, g.y, g.z, 1, 1);

@@ -2,19 +2,19 @@ PShape creerOrdinateur(int leftOrRight){ //l = 0 r = 1
   PShape ordinateurGroup;
   PShape ecranGroup;
   
-  PShape ordinateur = creerForme(longueurOrdinateur,largeurOrdinateur,hauteurOrdinateur, 40, null);
-  PShape ecranPlateau = creerForme(longueurEcranPlateau, largeurEcranPlateau,1, 40, null);
-  PShape ecranPied = creerForme(2,4,15, 120, null);
+  PShape ordinateur = creerForme(longueurOrdinateur,largeurOrdinateur,hauteurOrdinateur, 40, null, 100, 0);
+  PShape ecranPlateau = creerForme(longueurEcranPlateau, largeurEcranPlateau,1, 40, null, 0, 40);
+  PShape ecranPied = creerForme(2,4,15, 120, null, 60, 120);
   //Forme formeEcranBord = creerForme(3,largeurEcran , hauteurEcran); // forme de départ pour l'écran
-  PShape ecranBordHaut = creerForme(3,largeurEcran , 1, 15, null);
-  PShape ecranBordDroite = creerForme(3,1 , hauteurEcran-2, 15, null);
-  PShape ecranBordBas = creerForme(3,largeurEcran , 1, 15, null);
-  PShape ecranBordGauche = creerForme(3,1 , hauteurEcran-2, 15, null);
-  PShape ecranBordDos = creerForme(1, largeurEcran-2 , hauteurEcran-2, 15, null);
+  PShape ecranBordHaut = creerForme(3,largeurEcran , 1, 15, null, 20, 15);
+  PShape ecranBordDroite = creerForme(3,1 , hauteurEcran-2, 15, null, 20, 15);
+  PShape ecranBordBas = creerForme(3,largeurEcran , 1, 15, null, 20 ,15);
+  PShape ecranBordGauche = creerForme(3,1 , hauteurEcran-2, 15, null, 20 ,15 );
+  PShape ecranBordDos = creerForme(1, largeurEcran-2 , hauteurEcran-2, 15, null, 20, 15);
   
-  PShape ecranEcran = creerForme(1, largeurEcran-2 , hauteurEcran-2, 75, fondEcran);
+  PShape ecranEcran = creerForme(1, largeurEcran-2 , hauteurEcran-2, 75, fondEcran, 100, 0);
   
-  PShape clavier = creerForme(largeurClavier, longueurClavier, hauteurClavier, 0, clavierTexture);
+  PShape clavier = creerForme(largeurClavier, longueurClavier, hauteurClavier, 0, clavierTexture, 50, 0);
   
   ecranGroup = createShape(GROUP);
   
