@@ -1,3 +1,8 @@
+/**
+* @Author: Mahtieu Ibersien
+* Lire le readme.md du dépôt Git
+*/
+
 import java.util.HashMap;
 
 PShader shaderTexture;
