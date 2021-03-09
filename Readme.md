@@ -6,9 +6,9 @@
 
 ## Auteur(s)
 
-|Nom|Prénom|login|email|
-|--|--|--|--|
-| Ibersien | Mathieu | im161726 | mathieu.ibersien@etu.univ-lehavre.fr |
+|Nom|Prénom|email|
+|--|--|--|
+| Ibersien | Mathieu | mathieu.ibersien@etu.univ-lehavre.fr |
 
 ## Travail réalisé
 
