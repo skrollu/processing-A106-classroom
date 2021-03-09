@@ -1,6 +1,6 @@
 # Salle A106 PROCESSING
 
-- Année : M1 iWOCS
+- Année : M1 iWOCS 2019-2020
 - Matière: INFOGRAPHIE
 - Projet: Modélisation Salle A106
 
@@ -11,6 +11,8 @@
 | Ibersien | Mathieu | im161726 | mathieu.ibersien@etu.univ-lehavre.fr |
 
 ## Travail réalisé
+
+Ce projet a été réalisé dans le cadre de la matière "infographie" enseignée en Master 1 IWOCS à l'université du Havre. Le but était de reproduire une salle de classe (A106) en processing en utilisant des textures et shader (peu fonctionnel ici), en implémentant une caméra pour se déplacer dans l'espace et en gérant la création de beaucoup d'objets proprement pour ne pas surcharger la mémoire.
 
 ### Guides des Touches
 
